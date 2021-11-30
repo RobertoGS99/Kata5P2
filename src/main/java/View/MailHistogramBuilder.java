@@ -3,9 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Model;
+package View;
 
-import View.Mail;
+import Model.Histogram;
+import Model.Mail;
 import java.util.List;
 
 /**

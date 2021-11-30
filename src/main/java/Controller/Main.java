@@ -2,10 +2,12 @@
 package Controller;
 
 import Model.Histogram;
-import Model.MailHistogramBuilder;
-import Model.MailListReader;
+import View.MailHistogramBuilder;
+import View.MailListReader;
 import View.HistogramDisplay;
-import View.Mail;
+import Model.Mail;
+import View.MailListReaderBD;
+import View.MailReader;
 import java.util.List;
 
 public class Main {
@@ -25,7 +27,8 @@ public class Main {
     }
     
     private void input(){
-        mailList = MailListReader.read(fileName);
+        MailReader mr = new MailListReaderBD();
+        mailList = mr.read(fileName);
     }
     
     private void process(){

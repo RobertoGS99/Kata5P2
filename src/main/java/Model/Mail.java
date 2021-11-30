@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package View;
+package Model;
 
 /**
  *
@@ -19,4 +19,5 @@ public class Mail {
         String[] parts = mail.split("@");
         return parts[1];
     }
+    
 }

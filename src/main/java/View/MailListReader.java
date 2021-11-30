@@ -1,7 +1,7 @@
 
-package Model;
+package View;
 
-import View.Mail;
+import Model.Mail;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -11,8 +11,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class MailListReader {
-    public static List<Mail> read(String fileName){
+public class MailListReader implements MailReader {
+
+    @Override
+    public List<Mail> read(String fileName){
         List<Mail> list= new ArrayList<Mail>();
         
         try {
@@ -22,8 +24,7 @@ public class MailListReader {
                 if (line == null) break; 
                 if (line.contains("@")){
                     list.add(new Mail(line));
-                }
-                
+                }  
             }
         } catch (FileNotFoundException ex) {
             System.out.println("FileNotFoundException, MailListReader::read() "+ex.getMessage());
@@ -33,4 +34,7 @@ public class MailListReader {
         
         return list;
     }
+
+   
+    
 }
